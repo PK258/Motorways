@@ -18,8 +18,6 @@ const DATA_URL = {
     'https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/line/heathrow-flights.json' // eslint-disable-line
 };
 
-var port = process.env.PORT || 8080;
-
 const INITIAL_VIEW_STATE = {
   latitude: 47.65,
   longitude: 7,
