@@ -11,6 +11,6 @@ heroku git push master
 heroku logs --tail
 
 #Deploying the changes to the Heroku
-$ git add .
-$ git commit -am "Optimising"
-$ git push heroku master
+git add .
+git commit -am "Optimising"
+git push heroku master
