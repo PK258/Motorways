@@ -14,3 +14,6 @@ heroku logs --tail
 git add .
 git commit -am "Optimising"
 git push heroku master
+
+#Scaling the dynos in Heroku
+heroku ps:scale web=1

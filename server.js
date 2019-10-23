@@ -5,5 +5,7 @@ const app = express();
 app.use(express.static(__dirname + '/dist/'));
 app.use('/src/assets', express.static(__dirname + '/src/assets/'));
 
-
-app.listen(process.env.PORT || 8080);
+var port = process.env.PORT || 3000;
+app.listen(port, "0.0.0.0", function() {
+console.log("Listening on Port 3000");
+});
