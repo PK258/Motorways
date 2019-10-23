@@ -11,12 +11,12 @@ import GL from '@luma.gl/constants';
 const MAPBOX_TOKEN = 'pk.eyJ1IjoicGsyNTgiLCJhIjoiY2ptb2piNjg0MTFxYjNrcGJrdWpkNGlwbiJ9.-gS27ocyqcbT-t7hXrVvXw'
 
 // Source data CSV
-const DATA_URL = {
-  AIRPORTS:
-    'https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/line/airports.json', // eslint-disable-line
-  FLIGHT_PATHS:
-    'https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/line/heathrow-flights.json' // eslint-disable-line
-};
+// DATA_URL = {
+//  AIRPORTS:
+//    'https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/line/airports.json', // eslint-disable-line
+//  FLIGHT_PATHS:
+//    'https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/line/heathrow-flights.json' // eslint-disable-line
+//};
 
 const INITIAL_VIEW_STATE = {
   latitude: 47.65,
@@ -58,48 +58,48 @@ export default class App extends Component {
     this.setState({x, y, hoveredObject: object});
   }
 
-  _renderTooltip() {
-    const {x, y, hoveredObject} = this.state;
-    return (
-      hoveredObject && (
-        <div className="tooltip" style={{left: x, top: y}}>
-          <div>{hoveredObject.country || hoveredObject.abbrev}</div>
-          <div>{hoveredObject.name.indexOf('0x') >= 0 ? '' : hoveredObject.name}</div>
-        </div>
-      )
-    );
-  }
+//  _renderTooltip() {
+//    const {x, y, hoveredObject} = this.state;
+//    return (
+//      hoveredObject && (
+//        <div className="tooltip" style={{left: x, top: y}}>
+//          <div>{hoveredObject.country || hoveredObject.abbrev}</div>
+//          <div>{hoveredObject.name.indexOf('0x') >= 0 ? '' : hoveredObject.name}</div>
+//        </div>
+//      )
+//    );
+//  }
 
-  _renderLayers() {
-    const {
-      airports = DATA_URL.AIRPORTS,
-      flightPaths = DATA_URL.FLIGHT_PATHS,
-      getWidth = 3
-    } = this.props;
+//  _renderLayers() {
+//    const {
+//      airports = DATA_URL.AIRPORTS,
+//      flightPaths = DATA_URL.FLIGHT_PATHS,
+//      getWidth = 3
+//    } = this.props;
 
-    return [
-      new ScatterplotLayer({
-        id: 'airports',
-        data: airports,
-        radiusScale: 20,
-        getPosition: d => d.coordinates,
-        getFillColor: [255, 140, 0],
-        getRadius: d => getSize(d.type),
-        pickable: true,
-        onHover: this._onHover
-      }),
-      new LineLayer({
-        id: 'flight-paths',
-        data: flightPaths,
-        getSourcePosition: d => d.start,
-        getTargetPosition: d => d.end,
-        getColor,
-        getWidth,
-        pickable: true,
-        onHover: this._onHover
-      })
-    ];
-  }
+//    return [
+//      new ScatterplotLayer({
+//        id: 'airports',
+//        data: airports,
+//        radiusScale: 20,
+//        getPosition: d => d.coordinates,
+//        getFillColor: [255, 140, 0],
+//        getRadius: d => getSize(d.type),
+//        pickable: true,
+//        onHover: this._onHover
+//      }),
+//      new LineLayer({
+//        id: 'flight-paths',
+//        data: flightPaths,
+//        getSourcePosition: d => d.start,
+//        getTargetPosition: d => d.end,
+//        getColor,
+//        getWidth,
+//        pickable: true,
+//        onHover: this._onHover
+//      })
+//    ];
+//  }
 
   render() {
     const {mapStyle = 'mapbox://styles/mapbox/dark-v9'} = this.props;
