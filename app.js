@@ -6,6 +6,20 @@ import DeckGL from '@deck.gl/react';
 import {LineLayer, ScatterplotLayer} from '@deck.gl/layers';
 import GL from '@luma.gl/constants';
 
+
+const express = require('express');
+const path = require('path');
+const app = express();
+
+app.use(express.static(__dirname + '/dist/'));
+app.use('/src/assets', express.static(__dirname + '/src/assets/'));
+
+var port = process.env.PORT || 3000;
+app.listen(port, "0.0.0.0", function() {
+console.log("Listening on Port 3000");
+});
+
+
 // Set your mapbox token here
 //const MAPBOX_TOKEN = process.env.MapboxAccessToken; // eslint-disable-line
 const MAPBOX_TOKEN = 'pk.eyJ1IjoicGsyNTgiLCJhIjoiY2ptb2piNjg0MTFxYjNrcGJrdWpkNGlwbiJ9.-gS27ocyqcbT-t7hXrVvXw'
