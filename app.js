@@ -7,7 +7,7 @@ import {LineLayer, ScatterplotLayer} from '@deck.gl/layers';
 import GL from '@luma.gl/constants';
 
 // Set your mapbox token here
-const MAPBOX_TOKEN = process.env.MapboxAccessToken; // eslint-disable-line
+const MAPBOX_TOKEN = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoiY2pudzRtaWloMDAzcTN2bzN1aXdxZHB5bSJ9.2bkj3IiRC8wj3jLThvDGdA'; // eslint-disable-line
 
 // Source data CSV
 const DATA_URL = {
