@@ -7,11 +7,10 @@ import {LineLayer, ScatterplotLayer} from '@deck.gl/layers';
 import GL from '@luma.gl/constants';
 
 // Set your mapbox token here
-//const MAPBOX_TOKEN = process.env.MapboxAccessToken; // eslint-disable-line
-const MAPBOX_TOKEN = 'pk.eyJ1IjoicGsyNTgiLCJhIjoiY2ptb2piNjg0MTFxYjNrcGJrdWpkNGlwbiJ9.-gS27ocyqcbT-t7hXrVvXw'
+const MAPBOX_TOKEN = process.env.MapboxAccessToken; // eslint-disable-line
 
- Source data CSV
- DATA_URL = {
+// Source data CSV
+const DATA_URL = {
   AIRPORTS:
     'https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/line/airports.json', // eslint-disable-line
   FLIGHT_PATHS:
